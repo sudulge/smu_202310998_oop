@@ -34,18 +34,18 @@ class MP02 {
         BankAccount account = new BankAccount(10000);
 
         for (int i = 0; i < 3; i++) {
-            System.out.println("deposit/withdraw 입력");
+            System.out.println("입금/출금 입력");
             String operation = sc.next();
+            System.out.printf("%s 할 금액 입력\n", operation);
+            int amount = sc.nextInt();
 
-            if (operation.equals("deposit")) {
-                int amount = sc.nextInt();
+            if (operation.equals("입금")) {
                 account.deposit(amount);
             }
-            else if (operation.equals("withdraw")) {
-                int amount = sc.nextInt();
+            else if (operation.equals("출금")) {
                 account.withdraw(amount);
             }
-            System.out.printf("%d\n", account.getBalance());
+            System.out.printf("잔액: %d\n", account.getBalance());
         }
     }   
 }
